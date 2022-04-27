@@ -1,8 +1,9 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.notification {
+    width: 50%;
+    text-align: center;
 }
 
-a {
-  color: #00B7FF;
+button.register,
+button.login {
+    margin-top: 20px;
 }

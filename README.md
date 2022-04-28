@@ -1,5 +1,5 @@
 
-![Logo](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/th5xamgrr6se0x5ro4g6.png)
+![Logo](https://ksr-ugc.imgix.net/assets/029/425/273/c7780f13999b1636246ef4e55d539f90_original.png?ixlib=rb-2.1.0&crop=faces&w=1552&h=873&fit=crop&v=1591861432&auto=format&frame=1&q=92&s=340b76f25197cfa811e80228028d2511)
 
 
 # Card App

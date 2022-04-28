@@ -1,11 +1,15 @@
+const express = require('express');
 const createError = require('http-errors');
 const logger = require('morgan');
-const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const hbs = require('hbs');
 
+
+const indexRouter = require('./routes/index');
+const aboutRouter = require('./routes/about');
+const usersRouter = require('./routes/users');
 
 
 // HIDE YOUR MONGO CONNECTION VARIABLES 
@@ -26,17 +30,9 @@ mongoose.connect(process.env.DB_URI, {
 .catch(err => console.log(err));
 
 
-// ESTABLISH ROUTES
+// VIEW ENGINE SETUP
 
 const app = express();
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const aboutRouter = require('./routes/about')
-
-
-
-
-// VIEW ENGINE SETUP
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -47,24 +43,31 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
 hbs.registerPartials(__dirname + '/views/partials');
 
 
 // UNRESTRICTED ROUTES
 
 app.use('/', indexRouter);
+
 app.use('/about', aboutRouter);
-app.use('/users/register', usersRouter);
-app.use('/users/login', usersRouter);
+app.use('/users', usersRouter);
+
+// DIDNT NEED THESE ROUTES
+// app.use('/users/register', usersRouter);
+// app.use('/users/login', usersRouter);
+// app.use('/users/logout', usersRouter);
+
 
 
 
 // RESTRICTED ROUTES
 
 app.use('/users/logout', usersRouter);
+
+
+
+
 
 // CATCH 404 AND FORWARD TO ERROR HANDLER
 

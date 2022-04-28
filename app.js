@@ -1,11 +1,15 @@
+const express = require('express');
 const createError = require('http-errors');
 const logger = require('morgan');
-const express = require('express');
 const mongoose = require('mongoose');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const hbs = require('hbs');
 
+
+const indexRouter = require('./routes/index');
+const aboutRouter = require('./routes/about');
+const usersRouter = require('./routes/users');
 
 
 // HIDE YOUR MONGO CONNECTION VARIABLES 
@@ -44,18 +48,15 @@ hbs.registerPartials(__dirname + '/views/partials');
 
 // UNRESTRICTED ROUTES
 
-const indexRouter = require('./routes/index');
 app.use('/', indexRouter);
 
-const aboutRouter = require('./routes/about');
 app.use('/about', aboutRouter);
+app.use('/users', usersRouter);
 
-const usersRouter = require('./routes/users');
-app.use('/users/register', usersRouter);
-app.use('/users/login', usersRouter);
-app.use('/users/logout', usersRouter);
-
-
+// DIDNT NEED THESE ROUTES
+// app.use('/users/register', usersRouter);
+// app.use('/users/login', usersRouter);
+// app.use('/users/logout', usersRouter);
 
 
 

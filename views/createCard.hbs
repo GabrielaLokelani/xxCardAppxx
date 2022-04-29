@@ -1,0 +1,37 @@
+<main>
+  {{#each messages}}
+  <div class="container-fluid alert alert-warning notification">
+    {{this}}
+  </div>
+  {{/each}}
+<form action='/createCard' method="POST">
+<form class="row g-3">
+  <div class="col-12">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" id="name" name="cardName">
+  </div>
+  <div class="col-md-6">
+    <label for="level" class="form-label">Level</label>
+    <input type="number" class="form-control" id="level" name="cardLevel">
+  </div>
+  <div class="col-12">
+    <label for="imageUrl" class="form-label">ImageUrl</label>
+    <input type="text" class="form-control" id="imageUrl" name="cardImage">
+  </div>
+  <div class="col-12">
+    <label for="description" class="form-label">Description</label>
+    <input type="text" class="form-control" id="description" name="cardDescription">
+  </div>
+  <div class="col-md-6">
+    <label for="power" class="form-label">Power</label>
+    <input type="text" class="form-control" id="power" name="cardPower">
+  </div>
+  <div class="col-md-2">
+    <label for="tags" class="form-label">Tags</label>
+    <input type="text" class="form-control" id="tags" name="tags">
+  </div>
+  <div class="col-md-12">
+    <button type="submit" class="btn btn-primary">Create Card</button>
+  </div>
+</div>
+</form>

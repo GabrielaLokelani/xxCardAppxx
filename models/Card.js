@@ -5,12 +5,14 @@ const { Schema } = mongoose
 
 const cardSchema = mongoose.Schema({
     cardName: String,
-    cardDescription: String,
+    cardLevel: Number,
     cardImage: String,
+    cardDescription: String,
+    cardPower: String,
     creator: {type: Schema.Types.ObjectId, ref: 'User'},
     tags: [],
     ratings: [Number]
 })
 
 
-module.exports = mongoose.model('Card', cardSchema)
+module.exports = mongoose.model('Card', cardSchema);

@@ -6,10 +6,12 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const hbs = require('hbs');
 
-
+// PAGE ROUTES
 const indexRouter = require('./routes/index');
 const aboutRouter = require('./routes/about');
 const usersRouter = require('./routes/users');
+const createCardRouter = require('./routes/createCard');
+const createDeckRouter = require('./routes/createDeck');
 
 
 // HIDE YOUR MONGO CONNECTION VARIABLES 
@@ -53,21 +55,18 @@ app.use('/', indexRouter);
 app.use('/about', aboutRouter);
 app.use('/users', usersRouter);
 
+
 // DIDNT NEED THESE ROUTES
 // app.use('/users/register', usersRouter);
 // app.use('/users/login', usersRouter);
 // app.use('/users/logout', usersRouter);
 
 
-
-
 // RESTRICTED ROUTES
 
 app.use('/users/logout', usersRouter);
-
-
-
-
+app.use('/createCard', createCardRouter);
+app.use('/createDeck', createDeckRouter);
 
 // CATCH 404 AND FORWARD TO ERROR HANDLER
 

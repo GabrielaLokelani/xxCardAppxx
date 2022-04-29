@@ -3,7 +3,55 @@
     text-align: center;
 }
 
+main {
+    margin: 0 4em;
+    border-radius: 15px;
+    padding: 2em;
+}
+
+div.container {
+    display: block;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    display: inline;
+}
+
 button.register,
 button.login {
     margin-top: 20px;
+}
+
+div.form {
+    border-radius: 5px;
+    padding: 20px;
+    width: 36%;
+    margin: auto;
+}
+
+div.card-box1 {
+    display: inline-block;
+    border: 1px solid #2b415433;
+    background: white;
+    width: 23%;
+    vertical-align: top;
+    margin-bottom: 4px;
+}
+p.name {
+    text-align: center;
+    font-size: auto;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 10px;
+    border-bottom: 1px solid #2b415433;
+}
+img.card {
+    display: block;
+    margin: 4px auto;
+    height: 100px;
+    width: 90px;
+    text-align: center;
 }

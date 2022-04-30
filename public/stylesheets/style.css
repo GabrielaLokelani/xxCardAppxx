@@ -3,7 +3,7 @@
     text-align: center;
 }
 
-main {
+/* main {
     margin: 0 4em;
     border-radius: 15px;
     padding: 2em;
@@ -11,7 +11,7 @@ main {
 
 div.container {
     display: block;
-}
+} */
 
 body {
     margin: 0;
@@ -33,12 +33,19 @@ div.form {
 }
 
 div.card-box1 {
-    display: inline-block;
-    border: 1px solid #2b415433;
+    /* display: inline-block; */
+    /* border: 1px solid #2b415433;
     background: white;
     width: 23%;
     vertical-align: top;
-    margin-bottom: 4px;
+    margin-bottom: 4px; */
+    /* vertical-align: top; */
+    width: 310px;
+    border: 1px solid #DCDCDC;
+    box-shadow: 1px 1px 1px 0px #EBEBEB;
+    /* padding-right: .2em;
+    padding-left: .7em;
+    padding-bottom: .6em; */
 }
 p.name {
     text-align: center;
@@ -55,3 +62,7 @@ img.card {
     width: 90px;
     text-align: center;
 }
+
+.checked {
+    color: orange;
+  }

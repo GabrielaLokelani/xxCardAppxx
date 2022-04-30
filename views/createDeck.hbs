@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <main>
   {{#each messages}}
   <div class="container-fluid alert alert-warning notification">
@@ -6,28 +7,49 @@
   {{/each}}
 <form action='/createDeck' method="POST">
 <form class="row g-3">
-  <div class="col-6">
-    <label for="name" class="form-label">Name</label>
-    <input type="text" class="form-control" id="name">
+  <div class="col-4">
+    <label for="name" class="form-label">Deck Name</label>
+    <input type="text" class="form-control" id="name" name="deckName">
   </div>
-  <div class="col-md-6">
-    <label for="level" class="form-label">Level</label>
-    <input type="number" class="form-control" id="level">
-  </div>
-  <div class="col-12">
-    <label for="imageUrl" class="form-label">ImageUrl</label>
-    <input type="text" class="form-control" id="imageUrl">
-  </div>
-  <div class="col-12">
+  <div class="col-md-8">
     <label for="description" class="form-label">Description</label>
-    <input type="text" class="form-control" id="description">
+    <input type="text" class="form-control" id="description" name="deckDescription">
+  </div>
+  <div class="col-md-8">
+    <label for="imageUrl" class="form-label">Cover Image</label>
+    <input type="url" class="form-control" id="imageUrl" name="deckImage">
+  </div>
+  {{!-- <div class="col-md-4">
+    <label for="creator" class="form-label">Creator</label>
+    <input type="text" class="form-control" id="creator" name="creator">
+  </div> --}}
+  <div class="col-md-6">
+    <label for="cards" class="form-label">Cards</label>
+    <select class="form-select" id="cards" name="cards">
+        {{#each cards}}
+        {{> cardOption card = this}}
+        {{/each}}
+    </select>
+    {{!-- <input type="select" class="form-control" id="cards" name="cards"> --}}
   </div>
   <div class="col-md-2">
     <label for="tags" class="form-label">Tags</label>
-    <input type="text" class="form-control" id="tags">
+    <input type="text" class="form-control" id="tags" name="tags">
+  </div>
+  <div class="col-md-2">
+    <label for="ratings" class="form-label">Ratings</label>
+    <input type="number" class="form-control" id="ratings" name="ratings">
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star checked"></span>
+      <span class="fa fa-star"></span>
   </div>
   <div class="col-md-12">
     <button type="submit" class="btn btn-primary">Create Deck</button>
   </div>
 </div>
 </form>
+
+
+    {{!-- MAKEING FOOOOOOOOODDDDDDD!!!! :)))) --}}

@@ -60,18 +60,21 @@
               <li><a class="dropdown-item" href="#">Another action</a></li>
               <li><hr class="dropdown-divider" /></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-          </li> --}}
+            </ul> --}}
+          {{!-- </li> --}}
           {{!-- <li class="nav-item">
             <a class="nav-link disabled">Disabled</a>
           </li> --}}
-        </ul>
+        {{!-- </ul> --}}
         <form class="d-flex">
           <input
             class="form-control me-2"
             type="search"
-            placeholder="Search"
+            name="search"
+            placeholder="Search by name or tag..."
             aria-label="Search"
+            action="/"
+            method="GET"
           />
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>

@@ -7,7 +7,7 @@ const deckSchema = mongoose.Schema({
     deckDescription: String,
     deckImage: String,
     creator: {type: Schema.Types.ObjectId, ref: 'User'},
-    tags: [],
+    tags: [String],
     cards: [{type: Schema.Types.ObjectId, ref: 'Card'}],
     ratings: [Number]
 })

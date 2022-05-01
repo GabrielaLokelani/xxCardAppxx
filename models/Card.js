@@ -1,4 +1,3 @@
-// A simple card template to get started...
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
@@ -10,7 +9,7 @@ const cardSchema = mongoose.Schema({
     cardDescription: String,
     cardPower: String,
     creator: {type: Schema.Types.ObjectId, ref: 'User'},
-    tags: [],
+    tags: [String],
     ratings: [Number]
 })
 

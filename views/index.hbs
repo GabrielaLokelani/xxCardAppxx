@@ -1,7 +1,64 @@
 <main>
+    {{#each messages}}
+    <div class="container-fluid alert alert-warning notification">
+        {{this}}
+    </div>
+    {{/each}}
+
     {{#if username}}
-    <h3>Currently logged in as {{username}}.</h3>
+        <h3>Currently logged in as {{username}}.</h3>
     {{/if}}
+
+
+    {{#if searched}}
+
+    {{#if taggedCards}}
+        <h3>Your search matched these tagged cards:</h3>
+        <div class="container">
+            <div class="row">
+                {{#each taggedCards}}
+                {{> cardDiv card = this}}
+                {{/each}}
+            </div>
+        </div>
+    <hr>
+    {{/if}}
+    {{#if taggedDecks}}
+        <h3>Your search matched these tagged decks:</h3>
+        <div class="container">
+            <div class="row">
+                {{#each taggedDecks}}
+                {{> deckDiv deck = this}}
+                {{/each}}
+            </div>
+        </div>
+    <hr>
+    {{/if}}
+    {{#if cards}}
+    <h3>Your search matched these cards:</h3>
+    <div class="container">
+        <div class="row">
+            {{#each cards}}
+            {{> cardDiv card = this}}
+            {{/each}}
+        </div>
+    </div>
+    {{/if}}
+    {{#if decks}}
+    <hr>
+    <h3>Your search matched these decks:</h3>
+    <div class="container">
+        <div class="row">
+            {{#each decks}}
+            {{> deckDiv deck = this}}
+            {{/each}}
+        </div>
+    </div>
+    {{/if}}
+
+    {{else}}
+
+    {{#if cards}}
     <h3>Look at these awesome Cards!</h3>
     <div class="container">
         <div class="row">
@@ -10,6 +67,8 @@
             {{/each}}
         </div>
     </div>
+    {{/if}}
+    {{#if decks}}
     <hr>
     <h3>Look at these awesome Decks!</h3>
     <div class="container">
@@ -19,4 +78,8 @@
             {{/each}}
         </div>
     </div>
+    {{/if}}
+
+    {{/if}}
+
 </main>

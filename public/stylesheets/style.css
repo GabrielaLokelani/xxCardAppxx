@@ -3,16 +3,6 @@
     text-align: center;
 }
 
-/* main {
-    margin: 0 4em;
-    border-radius: 15px;
-    padding: 2em;
-}
-
-div.container {
-    display: block;
-} */
-
 body {
     margin: 0;
     padding: 0;
@@ -47,14 +37,17 @@ div.card-box1 {
     padding-left: .7em;
     padding-bottom: .6em; */
 }
-p.name {
-    text-align: center;
-    font-size: auto;
-    font-weight: bolder;
-    text-transform: uppercase;
-    padding: 10px;
-    border-bottom: 1px solid #2b415433;
+
+div.card {
+    box-shadow: 10px 14px 6px -6px rgba(0,0,0,0.67);
+    -webkit-box-shadow: 10px 14px 6px -6px rgba(0,0,0,0.67);
+    -moz-box-shadow: 10px 14px 6px -6px rgba(0,0,0,0.67);
 }
+
+.card {
+    margin-bottom: 8px;
+}
+
 img.card {
     display: block;
     margin: 4px auto;
@@ -63,6 +56,20 @@ img.card {
     text-align: center;
 }
 
+p.name {
+    text-align: center;
+    font-size: auto;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 10px;
+    border-bottom: 1px solid #2b415433;
+}
+
+img.crdimage,
+img.deckimage {
+    border-radius:4px;
+}
+
 .checked {
     color: orange;
-  }
+}

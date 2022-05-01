@@ -1,14 +1,22 @@
 <main>
-  <h1>Index Page</h1>
-  {{#if username}}
-  <h3>Currently logged in as {{username}}.</h3>
-  {{/if}}
-  <h3>Look at these awesome Cards!</h3>
-      {{#each cards}}
-      {{> cardDiv card = this}}
-      {{/each}}
-  <h3>Look at these awesome Decks!</h3>     
-      {{#each decks}}
-      {{> deckDiv deck = this}}
-      {{/each}}
+    {{#if username}}
+    <h3>Currently logged in as {{username}}.</h3>
+    {{/if}}
+    <h3>Look at these awesome Cards!</h3>
+    <div class="container">
+        <div class="row">
+            {{#each cards}}
+            {{> cardDiv card = this}}
+            {{/each}}
+        </div>
+    </div>
+    <hr>
+    <h3>Look at these awesome Decks!</h3>
+    <div class="container">
+        <div class="row">
+            {{#each decks}}
+            {{> deckDiv deck = this}}
+            {{/each}}
+        </div>
+    </div>
 </main>

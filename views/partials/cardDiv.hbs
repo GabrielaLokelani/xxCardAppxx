@@ -7,7 +7,10 @@
         <p class="crddescription">Description: {{card.cardDescription}}</p>
         <p class="crdlevel">Level: {{card.cardLevel}}</p>
         <p class="crdpower">Power: {{card.cardPower}}</p>
-        <p class="crdtags">Tags: {{card.tags}}</p>
+        <p class="crdtags">Tags: 
+            {{#each card.tags}}
+                <a href="/?search={{this}}">{{this}}</a>
+            {{/each}}</p>
         <p class="crdratings">Ratings: {{card.ratings}}</p>
     </div>
 </div>

@@ -5,7 +5,11 @@
         </div>
         <h3 class="name">{{deck.deckName}}</h3>
         <p class="deckdescription">Description: {{deck.deckDescription}}</p>
-        <p class="decktags">Tags: {{deck.tags}}</p>
+        <p class="decktags">Tags: 
+            {{#each deck.tags}}
+                <a href="/?search={{this}}">{{this}}</a>
+            {{/each}}</p>
+        </p>
         <p class="deckratings">Ratings: {{deck.ratings}}</p>
     </div>
 </div>

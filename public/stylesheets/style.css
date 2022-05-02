@@ -10,8 +10,7 @@ body {
     display: inline;
 }
 
-button.register,
-button.login {
+button.lower {
     margin-top: 20px;
 }
 

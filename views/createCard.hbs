@@ -6,7 +6,7 @@
   {{/each}}
 <form action='/createCard' method="POST">
 <form class="row g-3">
-  <div class="col-12">
+  <div class="col-md-6">
     <label for="name" class="form-label">Name</label>
     <input type="text" class="form-control" id="name" name="cardName" autofocus>
   </div>
@@ -14,11 +14,11 @@
     <label for="level" class="form-label">Level</label>
     <input type="number" class="form-control" id="level" name="cardLevel">
   </div>
-  <div class="col-12">
+  <div class="col-10">
     <label for="imageUrl" class="form-label">ImageUrl</label>
     <input type="text" class="form-control" id="imageUrl" name="cardImage">
   </div>
-  <div class="col-12">
+  <div class="col-10">
     <label for="description" class="form-label">Description</label>
     <input type="text" class="form-control" id="description" name="cardDescription">
   </div>
@@ -35,3 +35,4 @@
   </div>
 </div>
 </form>
+</main>

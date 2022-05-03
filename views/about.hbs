@@ -1,8 +1,18 @@
 <main>
   <h1>About Page</h1>
   {{#if loggedIn}}
-  <h3>Currently logged in as {{username}}.</h3>
+  <h5>Currently logged in as {{username}}.</h5>
   {{/if}}
-  {{!-- <h3>This main div will be home to each page.</h3>
-  <h3>The Layout.hbs will have the head, header/navbar, and footer.</h3> --}}
+  <h3>Welcome to the CardApp!</h3>
+  <h5>Where users can create thier very own trading cards and decks, explore other user's creations, and collect their favorite ones!</h5>
+  <h4>Getting started</h4>
+  <p>As a new user, select the register tab to create a new user account. If you already have an account, select the login tab and fill in your login information. Cards and decks may still be viewed and searched while a user is not logged in. Although, to create, collect, and rate cards as well as decks, a user must be logged into their CardApp account.</p>
+  <h4>Searching for Cards, Decks, and Tags</h4>
+  <p>Use the search bar at the top of each page to find cards or decks with the matching name or tag</p>
+  <h4>Using Tags</h4>
+  <p>Tags can be added to cards or decks when they are created. A card or deck may have multiple tags and can be seperated by a single space in the creation form. Clicking on a card or deck's tag will lead to all similarly matching tags, go explore!</p>
+  <h4>Creating A Card</h4>
+  <p>Start by logging in (if you do not have a CardApp user account, see "Getting Started") and selecting the Create Card tab in the navigation bar. Fill in the form to your liking and click the "Create Card" button when finished. Images are added via url link.</p>
+  <h4>Creating A Deck</h4>
+  <p>Start by logging in (if you do not have a CardApp user account, see "Getting Started") and selecting the Design Deck tab in the navigation bar. Fill in the form to your liking and click the "Create Deck" button when finished. Images are added via url link. Use the selection drop down to select existing cards to add to the deck being created. Cards also have a button that adds the card to a deck when clicked.</p>
 </main>

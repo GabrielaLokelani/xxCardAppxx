@@ -6,15 +6,15 @@ const jwt = require('jsonwebtoken');
 const authenticateLogin = function authenticateLogin(req, res, next) {
     jwt.verify(req.cookies.access_token, process.env.JWT_SECRET, (err, decoded) => {
         if (err) {
-            res.authenticate = false
-            next()
+            res.authenticate = false;
+            next();
         } else {
-            res.authenticate = true
-            res.username = decoded.username
-            res.id = decoded.id
-            next()
-        }
-    })
-}
+            res.authenticate = true;
+            res.username = decoded.username;
+            res.id = decoded.id;
+            next();
+        };
+    });
+};
 
-module.exports = authenticateLogin
+module.exports = authenticateLogin;

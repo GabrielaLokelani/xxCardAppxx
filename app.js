@@ -12,6 +12,7 @@ const aboutRouter = require('./routes/about');
 const usersRouter = require('./routes/users');
 const createCardRouter = require('./routes/createCard');
 const createDeckRouter = require('./routes/createDeck');
+const searchRouter = require('./routes/search.js')
 
 
 // HIDE YOUR MONGO CONNECTION VARIABLES 
@@ -54,6 +55,7 @@ app.use('/', indexRouter);
 
 app.use('/about', aboutRouter);
 app.use('/users', usersRouter);
+app.use('/search', searchRouter);
 
 
 // DIDNT NEED THESE ROUTES

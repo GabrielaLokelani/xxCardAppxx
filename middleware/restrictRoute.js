@@ -5,10 +5,10 @@ const jwt = require('jsonwebtoken');
 
 const restrictRoute = function restrictRoute(req, res, next) {
         if (res.authenticate) {
-            next()
+            next();
         } else {
-            res.redirect('/')
-        }
-}
+            res.redirect('/');
+        };
+};
 
-module.exports = restrictRoute
+module.exports = restrictRoute;

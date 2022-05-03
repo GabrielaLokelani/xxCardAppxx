@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const authenticateLogin = require('../middleware/authenticateLogin')
-const restrictRoute = require('../middleware/restrictRoute')
-const Deck = require('../models/Deck')
-const Card = require('../models/Card')
+const authenticateLogin = require('../middleware/authenticateLogin');
+const restrictRoute = require('../middleware/restrictRoute');
+const Deck = require('../models/Deck');
+const Card = require('../models/Card');
 
 // GET ABOUT PAGE
 

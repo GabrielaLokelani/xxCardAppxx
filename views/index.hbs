@@ -5,7 +5,7 @@
     </div>
     {{/each}}
 
-    {{#if username}}
+    {{#if loggedIn}}
         <h3>Currently logged in as {{username}}.</h3>
     {{/if}}
 
@@ -63,7 +63,7 @@
     <div class="container">
         <div class="row">
             {{#each cards}}
-            {{> cardDiv card = this}}
+            {{> cardDiv card = this }}
             {{/each}}
         </div>
     </div>

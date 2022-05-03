@@ -5,7 +5,6 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
 
-
 // GET LOGIN USER PAGE
 
 router.get('/login', function(req, res, next) {
@@ -38,9 +37,8 @@ router.post('/login', async function(req, res) {
   }
 
   if (match) {
-    const payload = { id: user._id, username: username }
-    // const options = { expiresIn: '1d' }
-    const token = jwt.sign(payload, process.env.JWT_SECRET, {expiresIn: '1h'})
+    const payload = { id: user._id, username: username };
+    const token = jwt.sign(payload, process.env.JWT_SECRET, {expiresIn: '6h'});
 
     res.cookie('access_token', token);
 
@@ -78,19 +76,19 @@ router.post('/register', function(req, res, next) {
         });
         newUser.save((err) => {
           if (err) {
-            const errMsg = newUser.validateSync().errors
+            const errMsg = newUser.validateSync().errors;
             let messages = [];
             if (errMsg.username) {
                 console.log(errMsg.username.properties.message);
                 messages.push(errMsg.username.properties.message);
-            }
+            };
             return res.render('register', { messages: messages });
           } else {
             return res.redirect('/users/login');
-          }
-        })
-      }
-    }
+          };
+        });
+      };
+    };
   } else {
     res.render('register', { messages: ["Please fill in all fields!"] });
   }

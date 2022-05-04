@@ -21,7 +21,6 @@ router.get('/', authenticateLogin, async function(req, res, next) {
       JSON.parse(currentCookie).forEach((id) => {
         if (card._id.valueOf() == id) {
           card.selected = true
-          // Might have to go back and just add a third cardDiv partial for already selected cards, unless I can find a way to pass in variables to partials somehow.
         }
       })
     })
@@ -35,15 +34,6 @@ router.get('/', authenticateLogin, async function(req, res, next) {
 router.get('/select/:id', authenticateLogin, restrictRoute, async function (req, res, next) {
   let currentCookie = req.cookies.selected_cards;
   let cards = await Card.find({}).lean();
-  if (currentCookie != undefined) {
-    cards.forEach((card) => {
-      JSON.parse(currentCookie).forEach((id) => {
-        if (card._id.valueOf() == id) {
-          card.selected = true
-        }
-      })
-    })
-  }
   let id = [req.params.id]
   if (currentCookie == undefined) {
     res.cookie('selected_cards', JSON.stringify(id));
@@ -63,8 +53,7 @@ router.get('/select/:id', authenticateLogin, restrictRoute, async function (req,
       })
     })
   }
-  // let messages = [];
-  // res.render('index', { cards: cards, decks: decks, loggedIn: res.authenticate, username: res.username, messages: messages });
+
   res.redirect('/')
 })
 

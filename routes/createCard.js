@@ -38,6 +38,7 @@ router.post('/', authenticateLogin, restrictRoute, async function(req, res, next
                 await CardTag.findByIdAndUpdate(findTag._id, { $push: { cards: card._id } }).exec();
             };
         });
+        card.creator = res.id
         card.save((err, doc) => {
             if (err) {
                 console.log(err);
@@ -46,6 +47,7 @@ router.post('/', authenticateLogin, restrictRoute, async function(req, res, next
             };
         })
     } else {
+        card.creator = res.id
         card.save((err, doc) => {
             if (err) {
                 console.log(err);

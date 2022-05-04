@@ -23,13 +23,23 @@
     <label for="creator" class="form-label">Creator</label>
     <input type="text" class="form-control" id="creator" name="creator">
   </div> --}}
-  <div class="col-md-6">
-    <label for="cards" class="form-label">Cards</label>
-    <select class="form-select" id="cards" name="cards">
-        {{#each cards}}
-        {{> cardOption card = this}}
-        {{/each}}
-    </select>
+  <div class="col-md-12">
+    <label for="cards" class="form-label">Selected Cards</label>
+      <div class="row">
+        {{#if cards}}
+          {{#each cards}}
+          {{> cardDivLoggedIn card = this}}
+          {{/each}}
+        {{else}}
+          <h5>No cards selected!</h5>
+        {{/if}}
+      </div>
+    {{!-- <select class="form-select" id="cards" name="cards"> --}}
+        {{!-- {{#each cards}} --}}
+        {{!-- {{> cardOption card = this}} --}}
+        {{!-- {{/each}} --}}
+    {{!-- </select> --}}
+
     {{!-- <input type="select" class="form-control" id="cards" name="cards"> --}}
   </div>
   <div class="col-md-2">

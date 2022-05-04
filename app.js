@@ -58,12 +58,6 @@ app.use('/users', usersRouter);
 app.use('/search', searchRouter);
 
 
-// DIDNT NEED THESE ROUTES
-// app.use('/users/register', usersRouter);
-// app.use('/users/login', usersRouter);
-// app.use('/users/logout', usersRouter);
-
-
 // RESTRICTED ROUTES
 
 app.use('/users/logout', usersRouter);

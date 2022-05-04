@@ -13,6 +13,7 @@ const usersRouter = require('./routes/users');
 const createCardRouter = require('./routes/createCard');
 const createDeckRouter = require('./routes/createDeck');
 const searchRouter = require('./routes/search');
+const userAccountRouter = require('./routes/userAccount');
 
 
 // HIDE YOUR MONGO CONNECTION VARIABLES 
@@ -63,6 +64,7 @@ app.use('/search', searchRouter);
 app.use('/users/logout', usersRouter);
 app.use('/createCard', createCardRouter);
 app.use('/createDeck', createDeckRouter);
+app.use('/userAccount', userAccountRouter);
 
 // CATCH 404 AND FORWARD TO ERROR HANDLER
 

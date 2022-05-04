@@ -6,7 +6,7 @@
         <h3 class="name">{{card.cardName}}</h3>
 
         {{#if card.selected}}
-        <p class="btn btn-success btn-sm">Selected</p>
+        <a href="/select/{{card._id}}" class="btn btn-success btn-sm unselect">Selected</a>
         {{else}}
         <a href="/select/{{card._id}}" class="btn btn-primary btn-sm">Select</a>
         {{/if}}

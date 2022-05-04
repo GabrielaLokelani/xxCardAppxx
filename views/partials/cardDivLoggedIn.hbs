@@ -4,6 +4,13 @@
             <img src={{card.cardImage}} class="img-fluid crdimage" alt="Card Image">
         </div>
         <h3 class="name">{{card.cardName}}</h3>
+
+        {{#if card.selected}}
+        <p class="btn btn-success btn-sm">Selected</p>
+        {{else}}
+        <a href="/select/{{card._id}}" class="btn btn-primary btn-sm">Select</a>
+        {{/if}}
+
         <p class="crddescription">Description: {{card.cardDescription}}</p>
         <p class="crdlevel">Level: {{card.cardLevel}}</p>
         <p class="crdpower">Power: {{card.cardPower}}</p>

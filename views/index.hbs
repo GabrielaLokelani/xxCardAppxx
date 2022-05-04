@@ -4,7 +4,9 @@
         {{this}}
     </div>
     {{/each}}
-
+    {{#if selected}}
+        <h3>Selected is true.</h3>
+    {{/if}}
     {{#if loggedIn}}
         <h3>Currently logged in as {{username}}.</h3>
     {{/if}}
@@ -16,13 +18,20 @@
         <h3>Your search matched these tagged cards:</h3>
         <div class="container">
             <div class="row">
-                {{#each taggedCards}}
-                {{> cardDiv card = this}}
-                {{/each}}
+                {{#if loggedIn}}
+                    {{#each taggedCards}}
+                    {{> cardDivLoggedIn card = this}}
+                    {{/each}}
+                {{else}}
+                    {{#each taggedCards}}
+                    {{> cardDiv card = this}}
+                    {{/each}}
+                {{/if}}
             </div>
         </div>
     <hr>
     {{/if}}
+
     {{#if taggedDecks}}
         <h3>Your search matched these tagged decks:</h3>
         <div class="container">
@@ -34,19 +43,27 @@
         </div>
     <hr>
     {{/if}}
+
     {{#if cards}}
-    <h3>Your search matched these cards:</h3>
+    <h3>Your search matched these card names:</h3>
     <div class="container">
         <div class="row">
-            {{#each cards}}
-            {{> cardDiv card = this}}
-            {{/each}}
+            {{#if loggedIn}}
+                {{#each cards}}
+                {{> cardDivLoggedIn card = this}}
+                {{/each}}
+            {{else}}
+                {{#each cards}}
+                {{> cardDiv card = this}}
+                {{/each}}
+            {{/if}}
         </div>
     </div>
     {{/if}}
+
     {{#if decks}}
     <hr>
-    <h3>Your search matched these decks:</h3>
+    <h3>Your search matched these deck names:</h3>
     <div class="container">
         <div class="row">
             {{#each decks}}
@@ -62,12 +79,19 @@
     <h3>Look at these awesome Cards!</h3>
     <div class="container">
         <div class="row">
-            {{#each cards}}
-            {{> cardDiv card = this }}
-            {{/each}}
+            {{#if loggedIn}}
+                {{#each cards}}
+                {{> cardDivLoggedIn card = this}}
+                {{/each}}
+            {{else}}
+                {{#each cards}}
+                {{> cardDiv card = this}}
+                {{/each}}
+            {{/if}}
         </div>
     </div>
     {{/if}}
+
     {{#if decks}}
     <hr>
     <h3>Look at these awesome Decks!</h3>

@@ -63,8 +63,6 @@ router.get("/", authenticateLogin, async function (req, res, next) {
 });
 
 router.post("/select/:id", authenticateLogin, restrictRoute, async function (req, res, next) {
-  const card = await Card.find({ _id: req.params.id });
-
   const currentCookie = req.cookies.selected_cards;
   if (currentCookie == null) {
     res.cookie("selected_cards", [req.params.id]);

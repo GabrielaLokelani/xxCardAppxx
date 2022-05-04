@@ -8,11 +8,7 @@ const DeckTag = require("../models/DeckTag");
 
 // GET CREATE DECK PAGE
 
-router.get(
-    "/",
-    authenticateLogin,
-    restrictRoute,
-    async function (req, res, next) {
+router.get("/", authenticateLogin, restrictRoute, async function (req, res, next) {
         const currentCookie = req.cookies.selected_cards;
 
         let cards;

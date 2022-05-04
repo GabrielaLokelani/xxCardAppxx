@@ -4,4 +4,43 @@
   {{/if}}
 
   <form action='/userAccount' method="GET"></form>
+  <div>
+  <img src="{{userImage}}" class="avatar">  
+    <div class="col-md-12">
+    <h4>Card Collection</h4>
+      <div class="row">
+        {{#if cards}}
+          {{#each cards}}
+          {{> cardDivLoggedIn card = this}}
+          {{/each}}
+        {{else}}
+          <h5>No cards in your collection</h5>
+        {{/if}}
+      </div>
+  </div>
+<div class="col-md-12">
+    <h4>Cards Created</h4>
+      <div class="row">
+        {{#if createdCards}}
+          {{#each createdCards}}
+          {{> cardDivLoggedIn card = this}}
+          {{/each}}
+        {{else}}
+          <h5>You have not created any cards yet</h5>
+        {{/if}}
+      </div>
+  </div>
+<div class="col-md-12">
+    <h4>Decks Created</h4>
+      <div class="row">
+        {{#if decks}}
+          {{#each decks}}
+          {{> deckDiv card = this}}
+          {{/each}}
+        {{else}}
+          <h5>You have not created any decks yet</h5>
+        {{/if}}
+      </div>
+  </div>
+  </div>
 </main>

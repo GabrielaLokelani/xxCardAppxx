@@ -59,7 +59,7 @@ router.get('/register', function(req, res, next) {
 // POST NEW USER
 
 router.post('/register', function(req, res, next) {
-  const {username, password, repeatPassword} = req.body;
+  const {username, userImageUrl, password, repeatPassword} = req.body;
 
   if (username != '' && password != '' && repeatPassword != '') {
     if (password != repeatPassword) {
@@ -72,7 +72,8 @@ router.post('/register', function(req, res, next) {
         const hash = bcrypt.hashSync(password, salt);
         const newUser = new User({
           username,
-          password: hash
+          password: hash,
+          userImageUrl
         });
         newUser.save((err) => {
           if (err) {

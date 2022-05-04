@@ -36,6 +36,16 @@ router.get("/", authenticateLogin, async function (req, res, next) {
       taggedDecks = taggedDecks[0].decks;
     };
     let messages = [];
+  if (cards.length == 0 && decks.length == 0 && taggedCards == 0 && taggedDecks == 0) {
+    let cards = await Card.find({});
+    let decks = await Deck.find({});
+    let messages = ["No cards, decks, or tags matched your search"]
+    res.render("index", {cards: cards,
+      decks: decks,
+      loggedIn: res.authenticate,
+      username: res.username,
+      messages: messages,})
+  } else {
     res.render("index", {
       searched: req.query.search,
       cards: cards,
@@ -46,8 +56,9 @@ router.get("/", authenticateLogin, async function (req, res, next) {
       username: res.username,
       messages: messages,
     });
+  }
   } else {
-    res.redirect('/');
+    res.redirect('/')
   };
 });
 
@@ -65,3 +76,6 @@ router.post("/select/:id", authenticateLogin, restrictRoute, async function (req
 });
 
 module.exports = router;
+
+// } else if (req.query.search != cardName || req.query.search != deckName || req.query.search != tag ) {
+//   res.send("No cards, decks, or tags matched your search");
